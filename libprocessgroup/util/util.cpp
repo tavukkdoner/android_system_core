@@ -194,7 +194,7 @@ bool ReadDescriptors(CgroupDescriptorMap* descriptors) {
     }
 
     // load API-level specific system cgroups descriptors if available
-    unsigned int api_level = GetUintProperty<unsigned int>("ro.product.first_api_level", 0);
+    unsigned int api_level = 0; //GetUintProperty<unsigned int>("ro.product.first_api_level", 0);
     if (api_level > 0) {
         std::string api_cgroups_path =
                 android::base::StringPrintf(TEMPLATE_CGROUPS_DESC_API_FILE, api_level);
